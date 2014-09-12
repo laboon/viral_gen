@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Viral Headlines</title>
+</head>
+<body>
+
+    <div id="viral-text">
+
+    </div>
+      <a href="">Viralize me</a>
+    <div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+
+
+        var noun = new Array("dog", "cat", "bird", "time", "issue", "year", "side", "people",
+	  "kid", "way", "head", "day", "house", "group", "car", "country", "city", "problem",
+          "community", "hand", "name", "part", "president",
+	  "place", "team", "case", "minute", "week", "idea", "company",	"kid", "system", "body",
+	  "program", "information", "question", "backbone", "work", "parent", "government", "face",
+	  "number", "others", "night", "level", "mister", "office", "point", "door", "home", "health",
+	  "water", "person", "room", "art", "mother", "war","area", "history", "money", "party",
+	  "story", "result", "fact", "change", "month", "morning", "lot", "reason", "right", "research",
+          "study", "girl", "book", "guy", "eye", "food", "job",
+          "moment", "word", "air", "business", "teacher",
+          "spell", "wizard", "mage", "cleric", "developer", "programmer", "code", "ruby", "airplane",
+          "conference", "keyword", "YAML", "puts", "JavaScript", "website", "page", "network", "system",
+          "file", "disk", "RAM", "VM", "YARV", "MRI", "PR", "haskell", "monad", "NES",
+          "RoboCop", "perl", "vim", "emacs", "rat", "mouse", "mac", "linux", "redhat", "ubuntu",
+          "opengl", "xbox",
+          "poison-ivy", "gasoline", "campfire", "lawn", "pizza",
+          "chompy", "github", "twitter", "facebook", "random eighties trivia", "random nineties trivia",
+          "youtube", "bridge", "xbox", "playstation", "unity", "baseball", "hockey",
+          "football", "antenna", "soho", "socold");
+
+	var adjective = new Array("big", "tall", "small", "little", "short", "quaint", "ugly", "obsolete",
+          "shiny", "red", "yellow", "orange", "funny", "sad", "green", "blue", "massive",
+          "dead", "living", "smart", "dumb", "flat", "bumpy", "vivacious", "endearing",
+          "slim", "intense", "bloodthirsty", "beautiful", "omniscient", "omnipotent",
+          "flowery", "purple", "entertaining", "short-lived", "sandy", "rough", "imperfect",
+          "perfect", "unredoubtable", "heroic", "doughty", "minimal", "minor", "major",
+          "overflowing", "wonderful", "performant", "microsoft", "open-source", "closed-source",
+          "oracle", "low-level", "high-level", "functional", "monadic", "static", "dynamic",
+          "enterprise", "executive", "fast", "buggy", "solid", "bulletproof", "late", "silly",
+          "salty", "sour", "wallet-borrowing", "restaurant-judging", "picky", "observant",
+          "chair-adjusting", "brave", "forgetful", "chair-sitting");
+
+	var goodSuperlative = new Array("fluffiest", "best", "shiniest");
+
+	var badSuperlative = new Array("least fluffy", "baldest", "worst");
+
+	var person = new Array("programmer", "jogger", "cyclist", "hairdresser", "narcissist",
+          "police officer", "wife", "balloon artist", "husband", "pedestrian", "skateboarder",
+          "fashion designer", "lion tamer", "monkey trainer", "acrobat", "crook", "outlaw",
+          "spelunker", "adventurer");
+
+	var verbPast = new Array("walked", "finished", "silenced", "kicked", "punched", "ate",
+          "dug", "judged", "programmed", "refactored", "restored", "drew", "entertained",
+          "drove", "flew", "understood", "drank", "rapped", "quaffed", "fixed", "spilled",
+          "cast", "let go of", "engaged", "married", "rejected", "wrote", "emailed",
+          "connected", "corrected", "engineered", "created", "rolled", "reduced", "threatened",
+          "raised", "funded", "foresaw", "prophesied");
+
+	var blewMeAway = new Array("blew me away", "blew my mind", "made me look again",
+          "made me rethink my position", "was unbelievable", "was just too much for me",
+          "was just too much", "was out of this world", "made me jump out of my skin",
+          "warmed my heart", "restored my faith in humanity", "made me love him even more",
+          "made me love her even more", "made me love him", "made me love her");
+
+        $( document ).ready(function() {
+	  Array.prototype.sample = function () {
+            return this[Math.floor(Math.random() * this.length)]
+          }
+
+          showViralHeadline();
+
+        });
+
+        $( "a" ).click(function( event ) {
+
+	  showViralHeadline();
+          event.preventDefault();
+
+        });
+
+	function showViralHeadline() {
+	  $("#viral-text").text(generate());
+	}
+
+
+	function generateOnlyPeople() {
+          var toReturn = "Only people who " + verbPast.sample() + " with a " +
+            noun.sample() + " will understand this " +
+            adjective.sample() + " " + noun.sample() + ".";
+          return toReturn;
+	}
+
+	function generateNReasons() {
+          var num = (Math.floor(Math.random() * 30) + 1).toString();
+	  var toReturn = num + " reasons that your " + person.sample() + " " + verbPast.sample() + "."
+          return toReturn;
+	}
+
+	function generateNBest() {
+
+	  var superlative = (Math.random() < 0.5) ? goodSuperlative.sample() : badSuperlative.sample();
+          var num = (Math.floor(Math.random() * 30) + 1).toString();
+
+	  var toReturn = "The " + num + " " + superlative + " kinds of " +
+            adjective.sample() + " " + person.sample() + ".";
+
+          return toReturn;
+	}
+
+	function generateBlewMeAway() {
+	  var toReturn = "This " + adjective.sample() + " "
+            + person.sample() + " " + verbPast.sample() + " a " + noun.sample()
+	    + ".  What happened next " + blewMeAway.sample() + ".";
+	  return toReturn;
+	}
+
+	function generate() {
+	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best");
+
+	  switch (viralTemplates.sample()) {
+	    case "blew-me-away":
+	      return generateBlewMeAway();
+	      break;
+
+	    case "only-people":
+	      return generateOnlyPeople();
+	      break;
+
+	    case "n-reasons":
+	      return generateNReasons();
+	      break;
+
+	    case "n-best":
+	      return generateNBest();
+	      break;
+
+	    default:
+	      return "noogie";
+	  }
+
+	}
+
+
+    </script>
+
+
+
+
+</body>
+</html>
