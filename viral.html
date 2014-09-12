@@ -34,9 +34,9 @@ div.viralize {
     <script>
 
 
-        var noun = new Array("dog", "cat", "bird", "time", "issue", "year", "side", "people",
-	  "kid", "way", "head", "day", "house", "group", "car", "country", "city", "problem",
-          "community", "hand", "name", "part", "president",
+        var noun = new Array("dog", "cat", "bird", "time", "issue", "year", "side", "person",
+	  "kid", "street", "head", "day", "house", "group", "car", "country", "city", "problem",
+          "community", "hand", "name", "president",
 	  "place", "team", "case", "minute", "week", "idea", "company",	"kid", "system", "body",
 	  "program", "information", "question", "backbone", "work", "parent", "government", "face",
 	  "number", "others", "night", "level", "mister", "office", "point", "door", "home", "health",
@@ -120,15 +120,17 @@ div.viralize {
 
 
 	function generateOnlyPeople() {
-          var toReturn = "Only people who " + verbPast.sample() + " with a " +
+          var toReturn = "Only people who " + verbPast.sample() + " a " +
             noun.sample() + " will understand this " +
             adjective.sample() + " " + noun.sample() + ".";
           return toReturn;
 	}
 
 	function generateNReasons() {
-          var num = (Math.floor(Math.random() * 30) + 1).toString();
+          var num = (Math.floor(Math.random() * 30) + 5).toString();
+          var numMost = (Math.floor(Math.random() * num) + 1).toString();
 	  var toReturn = num + " reasons that your " + person.sample() + " " + verbPast.sample() + "."
+            + " Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
 	}
 
@@ -136,9 +138,10 @@ div.viralize {
 
 	  var superlative = (Math.random() < 0.5) ? goodSuperlative.sample() : badSuperlative.sample();
           var num = (Math.floor(Math.random() * 30) + 1).toString();
-
+          var numMost = (Math.floor(Math.random() * num) + 1).toString();
 	  var toReturn = "The " + num + " " + superlative + " kinds of " +
-            adjective.sample() + " " + person.sample() + ".";
+            adjective.sample() + " " + person.sample() + "." + " Number " +
+            numMost + " " + blewMeAway.sample() + ".";
 
           return toReturn;
 	}
