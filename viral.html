@@ -3,14 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <title>Viral Headlines</title>
+
+<style>
+
+div.headline {
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+}
+
+div.viralize {
+    font-size: 150%;
+    text-align: center;
+}
+
+</style>
+
+
 </head>
 <body>
 
-    <div id="viral-text">
+    <div id="viral-text" class="headline">
 
     </div>
+    <div class="viralize">
       <a href="">Viralize me</a>
-    <div>
+    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
@@ -58,7 +76,7 @@
           "slowest", "meanest", "most angry", "least epic", "saddest", "most depressing",
           "ugliest", "least enlightened", "worst-performing", "least powerful", "least humble",
           "smallest", "least elegant", "most normal", "weakest", "least difficult",
-          "least furry", "least funniest", "ugliest", "crankiest");
+          "least furry", "least funny", "ugliest", "crankiest");
 
 	var person = new Array("programmer", "jogger", "cyclist", "hairdresser", "narcissist",
           "police officer", "wife", "balloon artist", "husband", "pedestrian", "skateboarder",
