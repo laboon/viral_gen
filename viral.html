@@ -28,9 +28,9 @@
           "moment", "word", "air", "business", "teacher",
           "spell", "wizard", "mage", "cleric", "developer", "programmer", "code", "ruby", "airplane",
           "conference", "keyword", "YAML", "puts", "JavaScript", "website", "page", "network", "system",
-          "file", "disk", "RAM", "VM", "YARV", "MRI", "PR", "haskell", "monad", "NES",
-          "RoboCop", "perl", "vim", "emacs", "rat", "mouse", "mac", "linux", "redhat", "ubuntu",
-          "opengl", "xbox",
+          "file", "disk", "monad", "NES",
+          "RoboCop",  "rat", "mouse", "mac", "linux", "redhat", "ubuntu",
+          "opengl", "xbox", "video",
           "poison-ivy", "gasoline", "campfire", "lawn", "pizza",
           "chompy", "github", "twitter", "facebook", "random eighties trivia", "random nineties trivia",
           "youtube", "bridge", "xbox", "playstation", "unity", "baseball", "hockey",
@@ -48,9 +48,17 @@
           "salty", "sour", "wallet-borrowing", "restaurant-judging", "picky", "observant",
           "chair-adjusting", "brave", "forgetful", "chair-sitting");
 
-	var goodSuperlative = new Array("fluffiest", "best", "shiniest");
+	var goodSuperlative = new Array("fluffiest", "best", "shiniest", "most awesome",
+          "fastest", "nicest", "most awe-inspiring", "happiest", "most enlightened",
+          "best-performing", "most powerful", "most humble", "greatest", "most epic",
+          "most elegant", "most mathematical", "strangest", "strongest", "most difficult",
+          "furriest", "funniest", "most hilarious", "most beautiful", "prettiest" );
 
-	var badSuperlative = new Array("least fluffy", "baldest", "worst");
+	var badSuperlative = new Array("least fluffy", "baldest", "worst", "sickest",
+          "slowest", "meanest", "most angry", "least epic", "saddest", "most depressing",
+          "ugliest", "least enlightened", "worst-performing", "least powerful", "least humble",
+          "smallest", "least elegant", "most normal", "weakest", "least difficult",
+          "least furry", "least funniest", "ugliest", "crankiest");
 
 	var person = new Array("programmer", "jogger", "cyclist", "hairdresser", "narcissist",
           "police officer", "wife", "balloon artist", "husband", "pedestrian", "skateboarder",
@@ -68,7 +76,9 @@
           "made me rethink my position", "was unbelievable", "was just too much for me",
           "was just too much", "was out of this world", "made me jump out of my skin",
           "warmed my heart", "restored my faith in humanity", "made me love him even more",
-          "made me love her even more", "made me love him", "made me love her");
+          "made me love her even more", "made me love him", "made me love her",
+          "restored my faith", "made me gasp", "warmed my heart", "taught me what love really is",
+          "restored my belief in love");
 
         $( document ).ready(function() {
 	  Array.prototype.sample = function () {
