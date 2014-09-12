@@ -40,7 +40,7 @@ div.viralize {
 	  "place", "team", "case", "minute", "week", "idea", "company",	"kid", "system", "body",
 	  "program", "information", "question", "backbone", "work", "parent", "government", "face",
 	  "number", "others", "night", "level", "mister", "office", "point", "door", "home", "health",
-	  "water", "person", "room", "art", "mother", "war","area", "history", "money", "party",
+	  "water", "person", "room", "art", "mother", "war","area", "history", "dollar bill", "party",
 	  "story", "result", "fact", "change", "month", "morning", "lot", "reason", "right", "research",
           "study", "girl", "book", "guy", "eye", "food", "job",
           "moment", "word", "air", "business", "teacher",
@@ -61,7 +61,7 @@ div.viralize {
           "flowery", "purple", "entertaining", "short-lived", "sandy", "rough", "imperfect",
           "perfect", "unredoubtable", "heroic", "doughty", "minimal", "minor", "major",
           "overflowing", "wonderful", "performant", "microsoft", "open-source", "closed-source",
-          "oracle", "low-level", "high-level", "functional", "monadic", "static", "dynamic",
+          "oracular", "low-level", "high-level", "functional", "monadic", "static", "dynamic",
           "enterprise", "executive", "fast", "buggy", "solid", "bulletproof", "late", "silly",
           "salty", "sour", "wallet-borrowing", "restaurant-judging", "picky", "observant",
           "chair-adjusting", "brave", "forgetful", "chair-sitting");
@@ -129,7 +129,8 @@ div.viralize {
 	function generateNReasons() {
           var num = (Math.floor(Math.random() * 30) + 5).toString();
           var numMost = (Math.floor(Math.random() * num) + 1).toString();
-	  var toReturn = num + " reasons that your " + person.sample() + " " + verbPast.sample() + "."
+	  var toReturn = num + " reasons that this " + person.sample() + " " + verbPast.sample() +
+            " a " + noun.sample() + "."
             + " Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
 	}
