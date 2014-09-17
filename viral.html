@@ -2,9 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Viral Headlines</title>
+    <title>Infinite Viral</title>
 
 <style>
+
+.centered-element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 div.headline {
     font-weight: bold;
@@ -23,10 +29,10 @@ div.viralize {
 </head>
 <body>
 
-    <div id="viral-text" class="headline">
+    <div id="viral-text" class="headline centered-element">
 
     </div>
-    <div class="viralize">
+    <div class="viralize centered-element">
       <a href="">Viralize me</a>
     </div>
 
@@ -35,24 +41,21 @@ div.viralize {
     <script>
 
 
-        var noun = new Array("dog", "cat", "bird", "timepiece", "issue", "year", "side", "person",
+        var noun = new Array("dog", "cat", "bird", "timepiece", "issue", "person",
 	  "kid", "street", "head", "day", "house", "group", "car", "country", "city", "problem",
           "community", "hand", "name", "president",
-	  "place", "team", "case", "minute", "week", "idea", "company",	"kid", "system", "body",
-	  "program", "information", "question", "backbone", "work", "parent", "government", "face",
-	  "number", "others", "night", "level", "mister", "office", "point", "door", "home", "health",
+	  "place", "team", "case", "idea", "company", "system", "body",
+	  "program", "information", "question", "bone", "work", "parent", "government", "face",
+	  "number", "night", "level", "mister", "office", "point", "door", "home", "health",
 	  "water", "person", "room", "art", "mother", "war","area", "history", "dollar bill", "party",
 	  "story", "result", "fact", "change", "month", "morning", "lot", "reason", "right", "research",
           "study", "girl", "book", "guy", "eye", "food", "job",
-          "moment", "word", "air", "business", "teacher",
-          "spell", "wizard", "mage", "cleric", "developer", "programmer", "code", "ruby", "airplane",
-          "conference", "keyword", "YAML", "puts", "JavaScript", "website", "page", "network", "system",
+          "moment", "word", "air", "business", 
+          "spell", "wizard", "cleric", "doll",  "code", "airplane",
+          "conference", "keyword","website", "page", "network", "system",
           "file", "disk", "monad", "NES",
-          "RoboCop",  "rat", "mouse", "mac", "linux", "redhat", "ubuntu",
-          "opengl", "xbox", "video",
           "poison-ivy", "gasoline", "campfire", "lawn", "pizza",
-          "chompy", "github", "twitter", "facebook", "random eighties trivia", "random nineties trivia",
-          "youtube", "bridge", "xbox", "playstation", "unity", "baseball", "hockey",
+          "bridge", "baseball", "hockey puck",
           "football", "antenna");
 
 	var adjective = new Array("big", "tall", "small", "little", "short", "quaint", "ugly", "obsolete",
@@ -101,6 +104,12 @@ div.viralize {
           "quit", "bejeweled", "bedazzled", "amused", "awakened", "sparked", "started",
           "ended", "cheapened", "rattled", "guzzled", "gave away");
 
+        var gerund = new Array("grooming", "walking", "driving", "eating", "yelling", "talking",
+          "modeling", "drinking", "seeing", "feeling", "entertaining", "dining", "jumping",
+          "biking", "whispering", "programming", "playing", "climbing", "fiddling", 
+          "procrastinating", "entertaining", "performing", "growing", "meditating",
+          "cleansing", "crouching");
+
 	var blewMeAway = new Array("blew me away", "blew my mind", "made me look again",
           "made me rethink my position", "was unbelievable", "was just too much for me",
           "was just too much", "was out of this world", "made me jump out of my skin",
@@ -111,6 +120,14 @@ div.viralize {
           "cannot be believed", "is too much for this waking world", "enlightened me",
           "made me realize how good I have it", "was my favorite", "was amazing",
           "made me laugh out loud", "made me break down and cry", "made me cry");
+
+	var mayShockYou = new Array("may shock you", "may surprise you", "may not be what you were expecting",
+	  "might scare you", "might change your mind", "might just make this world a better place")
+
+        var timePeriod = new Array("second", "minute", "hour", "day", "Monday", "weekend", "week", 
+          "fortnight", "month", "year", "decade", "century", "millenium");
+
+        var wh = new Array("who", "what", "where", "when", "why", "how");
 
         $( document ).ready(function() {
 	  Array.prototype.sample = function () {
@@ -140,6 +157,13 @@ div.viralize {
           }, 500);
 	}
 
+        function getRandomNum() {
+          return (Math.floor(Math.random() * 15) + 5).toString();
+        }
+
+        function getRandomMost(num) {
+          return (Math.floor(Math.random() * num) + 2).toString();
+        }
 
 	function generateOnlyPeople() {
           var toReturn = "Only people who " + verbPast.sample() + " a " +
@@ -149,8 +173,8 @@ div.viralize {
 	}
 
 	function generateNReasons() {
-          var num = (Math.floor(Math.random() * 30) + 5).toString();
-          var numMost = (Math.floor(Math.random() * num) + 2).toString();
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
 	  var toReturn = num + " reasons that this " + person.sample() + " " + verbPast.sample() +
             " a " + noun.sample() + "."
             + " Number " + numMost + " " + blewMeAway.sample() + ".";
@@ -160,7 +184,7 @@ div.viralize {
 	function generateNBest() {
 
 	  var superlative = (Math.random() < 0.5) ? goodSuperlative.sample() : badSuperlative.sample();
-          var num = (Math.floor(Math.random() * 30) + 2).toString();
+          var num = getRandomNum();
           var numMost = (Math.floor(Math.random() * num) + 1).toString();
 	  var toReturn = "The " + num + " " + superlative + " kinds of " +
             adjective.sample() + " " + person.sample() + "." + " Number " +
@@ -176,8 +200,42 @@ div.viralize {
 	  return toReturn;
 	}
 
-	function generate() {
-	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best");
+	function generateMayShock() {
+          var toReturn = wh.sample() + " this " + adjective.sample() + " " + person.sample() 
+            + " " verbPast.sample() + " their " + noun.sample() + " " + mayShockYou.sample() + ".";
+          return toReturn;
+        }
+
+        function generateTwist() {
+          var toReturn = "I thought this " + person.sample() + " was " + adjective.sample() 
+            + " until I realized their "
+            + noun.sample() + " was " + adjective.sample() + "!";
+          return toReturn;
+	}
+
+	function generateHotTrend() {
+          var toReturn = "The hot new trend for this " + timePeriod.sample() + "? " + gerund.sample()
+            + " your " + noun.sample() + " just like a " + person.sample() + "!";
+          return toReturn;
+        }
+
+	function generateSecrets() {
+          var num = getRandomNum();
+          var numMost = getRandomMost();
+          var toReturn = num + " secrets of the world's most famous " + person.sample() + ". "
+            + "Number " + numMost + " " + blewMeAway.sample() + ".";
+          return toReturn;
+        }
+
+	function generateWhatXAreYou() {
+          var toReturn = "What kind of " + adjective.sample() + " " + person.sample() + " would you be? "
+            + "Take our quiz and find out!";
+          return toReturn;          
+        }	
+
+        function generate() {
+	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
+            "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you");
 
 	  switch (viralTemplates.sample()) {
 	    case "blew-me-away":
@@ -194,6 +252,26 @@ div.viralize {
 
 	    case "n-best":
 	      return generateNBest();
+	      break;
+
+	    case "may-shock":
+	      return generateMayShock();
+	      break;
+
+	    case "twist":
+	      return generateTwist();
+	      break;
+
+	    case "hot-trend":
+	      return generateHotTrend();
+	      break;
+
+	    case "secrets":
+	      return generateSecrets();
+	      break;
+
+	    case "what-x-are-you":
+	      return generateWhatXAreYou();
 	      break;
 
 	    default:
