@@ -6,12 +6,6 @@
 
 <style>
 
-.centered-element {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 div.headline {
     font-weight: bold;
     font-size: 200%;
@@ -29,10 +23,10 @@ div.viralize {
 </head>
 <body>
 
-    <div id="viral-text" class="headline centered-element">
+    <div id="viral-text" class="headline">
 
     </div>
-    <div class="viralize centered-element">
+    <div class="viralize">
       <a href="">Viralize me</a>
     </div>
 
@@ -41,93 +35,142 @@ div.viralize {
     <script>
 
 
-        var noun = new Array("dog", "cat", "bird", "timepiece", "issue", "person",
-	  "kid", "street", "head", "day", "house", "group", "car", "country", "city", "problem",
-          "community", "hand", "name", "president",
-	  "place", "team", "case", "idea", "company", "system", "body",
-	  "program", "information", "question", "bone", "work", "parent", "government", "face",
-	  "number", "night", "level", "mister", "office", "point", "door", "home", "health",
-	  "water", "person", "room", "art", "mother", "war","area", "history", "dollar bill", "party",
-	  "story", "result", "fact", "change", "month", "morning", "lot", "reason", "right", "research",
-          "study", "girl", "book", "guy", "eye", "food", "job",
-          "moment", "word", "air", "business", 
-          "spell", "wizard", "cleric", "doll",  "code", "airplane",
-          "conference", "keyword","website", "page", "network", "system",
-          "file", "disk", "monad", "NES",
-          "poison-ivy", "gasoline", "campfire", "lawn", "pizza",
-          "bridge", "baseball", "hockey puck",
-          "football", "antenna");
+        var noun = new Array("Dog", "Cat", "Bird", "Timepiece", "Issue", "Person",
+	  "Kid", "Street", "Head", "Day", "House", "Group", "Car", "Country", "City", "Problem",
+          "Community", "Hand", "Name", "President",
+	  "Place", "Team", "Case", "Idea", "Company", "System", "Body",
+	  "Program", "Information", "Question", "Bone", "Work", "Parent", "Government", "Face",
+	  "Number", "Boss", "Office", "Point", "Door", "Home", "Candy Bar", "Candy", "Gumdrop",
+	  "Cup", "Room", "Art", "Mother", "War","Area", "History", "Dollar Bill", "Party",
+	  "Story", "Result", "Fact", "History Book", "Fish", "Foot", "Pastry",
+          "Study", "Baby Doll", "Book", "Eye", "Food", "Job",
+          "Moment", "Word", "Air Hockey Table", "Business", 
+          "Spell", "Wizard", "Doll",  "Code", "Airplane",
+          "Conference", "Keyboard", "Website", "Page", "Network", "System",
+          "Poison Ivy Plant", "Daisy", "Gasoline", "Campfire", "Lawn", "Pizza",
+          "Bridge", "Baseball", "Hockey Puck", "Cookie", "Cake",
+          "Football", "Antenna", "Dresser", "Kiwi", "Kumquat", "Eyepatch", "Finger Painting",
+          "Weasel", "Earthworm", "Koala Bear", "Frog", "Dolphin", "Record Player", "Stamp Collection",
+          "Dance Club", "Sidewalk", "Skate Park", "Amusement Park", "Stuffed Animal", "Teddy Bear",
+          "Napkin", "Fork", "Spoon", "Table", "Tablecloth", "Fireplace", "Glasses", "Moustache",
+          "Mouth", "Floor", "Egg", "Watermelon", "Garden", "Porch", "Gate", "Violin", "Oboe", "Piano",
+          "Necklace", "Broom", "Stove", "Bedroom", "Bed", "Fan", "Lamp", "Horse", "Duck", "Sheep");
 
-	var adjective = new Array("big", "tall", "small", "little", "short", "quaint", "ugly", "obsolete",
-          "shiny", "red", "yellow", "orange", "funny", "sad", "green", "blue", "massive",
-          "dead", "living", "smart", "dumb", "flat", "bumpy", "vivacious", "endearing",
-          "slim", "intense", "bloodthirsty", "beautiful", "omniscient", "omnipotent",
-          "flowery", "purple", "entertaining", "short-lived", "sandy", "rough", "imperfect",
-          "perfect", "unredoubtable", "heroic", "doughty", "minimal", "minor", "major",
-          "overflowing", "wonderful", "performant", "microsoft", "open-source", "closed-source",
-          "oracular", "low-level", "high-level", "functional", "monadic", "static", "dynamic",
-          "enterprise", "executive", "fast", "buggy", "solid", "bulletproof", "late", "silly",
-          "salty", "sour", "wallet-borrowing", "restaurant-judging", "picky", "observant",
-          "chair-adjusting", "brave", "forgetful", "chair-sitting");
+        var pluralNoun = new Array("Dogs", "Cats", "Birds", "Antlers", "Antennae", "Ducks", "Goats",
+          "Books", "Plants", "Ants", "Blankets", "Cookies", "Cakes", "Whales", "Feathers", "Collages",
+          "Paintings", "Pictures", "Rugs", "Indoor Hockey Arenas", "Baseball Fields", "Buildings",
+          "Colleges", "Universities", "Schools", "Places", "Streams", "Chairs", "Volcanoes",
+          "Curtains", "Pirates", "Giraffes", "Zombies", "Cups", "Glasses", "Bookcases", "Bookshelves",
+          "Newspapers", "Skyscrapers", "Pipes", "Papers", "Socks", "Shirts", "Grandfathers", "Grandmothers",
+          "Fathers", "Mothers", "Shoes", "Children's Books", "Noses", "Eyes", "Ears", "Faces", 
+          "Record Players", "Radios", "Doors", "Wars", "Pages", "Bicycles", "Gnomes", "Elves", "Staircases",
+          "Horses", "Cities", "Towns", "Airplanes", "Ducks", "Geese", "Mice", "Sheep", "Models", "Phones",
+          "Companies", "Non-Profit Organizations", "Streets", "Hammers", "Bedspreads", "Websites",
+          "Hamsters", "Restaurants", "Boats", "Lakes", "Televisions", "Movies", "Movie Theaters",
+          "Coal Shovels", "Shovels", "Sandboxes", "Yards", "Telephone Lines", "Coffee Shops",
+          "Coins", "Fish", "Reindeer", "Deer", "Crayons", "Pencils", "Pens", "Holidays",
+          "Hotels", "Games", "Board Games", "Kittens");
 
-	var goodSuperlative = new Array("fluffiest", "best", "shiniest", "most awesome",
-          "fastest", "nicest", "most awe-inspiring", "happiest", "most enlightened",
-          "best-performing", "most powerful", "most humble", "greatest", "most epic",
-          "most elegant", "most mathematical", "strangest", "strongest", "most difficult",
-          "furriest", "funniest", "most hilarious", "most beautiful", "prettiest" );
+	var adjective = new Array("Big", "Tall", "Small", "Little", "Short", "Quaint", "Ugly", "Obsolete",
+          "Shiny", "Red", "Yellow", "Orange", "Funny", "Sad", "Green", "Blue", "Massive",
+          "Dead", "Alive", "Smart", "Dumb", "Flat", "Bumpy", "Vivacious", "Endearing",
+          "Slim", "Intense", "Bloodthirsty", "Beautiful", "Omniscient", "Omnipotent",
+          "Flowery", "Purple", "Entertaining", "Short-Lived", "Sandy", "Rough", "Imperfect",
+          "Perfect", "Heroic", "Minimalist", "Shoe-Losing", "Major", "Incredible", "Awe-Inspiring",
+          "Overflowing", "Wonderful", "Loving", "Fun-Loving",
+          "Oracular", "Low-Level", "High-Level", "Functional","Static", "Dynamic",
+          "Executive", "Fast", "Bulletproof", "Late", "Silly",
+          "Salty", "Sour", "Wallet-Borrowing", "Restaurant-Judging", "Picky", "Observant",
+          "Chair-Adjusting", "Brave", "Forgetful", "Chair-Sitting", "Mind-Blowing", "Crazy",
+          "Sexy", "Funny", "Birdlike", "Bird-brained", "Miniature", "Amazing", "Inspiring",
+          "High-Strung", "Famous", "Light", "Dark", "Feral", "Hairy", "Unkempt", "Empty",
+          "Leaky", "Criminal");
 
-	var badSuperlative = new Array("least fluffy", "baldest", "worst", "sickest",
-          "slowest", "meanest", "most angry", "least epic", "saddest", "most depressing",
-          "ugliest", "least enlightened", "worst-performing", "least powerful", "least humble",
-          "smallest", "least elegant", "most normal", "weakest", "least difficult",
-          "least furry", "least funny", "ugliest", "crankiest");
+	var goodSuperlative = new Array("Cutest", "Fluffiest", "Best", "Shiniest", "Most Awesome",
+          "Fastest", "Nicest", "Most Awe-Inspiring", "Happiest", "Most Enlightened",
+          "Best-Performing", "Most Powerful", "Most Humble", "Greatest", "Most Epic",
+          "Most Elegant", "Most Mathematical", "Strangest", "Strongest", "Most Difficult",
+          "Furriest", "Funniest", "Most Hilarious", "Most Beautiful", "Prettiest", "Loudest",
+          "Noisiest", "Brightest", "Smartest", "Most Honest", "Friendliest" );
 
-	var person = new Array("programmer", "jogger", "cyclist", "hairdresser", "narcissist",
-          "police officer", "wife", "balloon artist", "husband", "pedestrian", "skateboarder",
-          "fashion designer", "lion tamer", "monkey trainer", "acrobat", "crook", "outlaw",
-          "spelunker", "adventurer", "girlfriend", "boyfriend", "escape artist",
-          "father", "mother", "sister", "brother", "dog groomer", "soldier", "nuclear technician",
-          "technician", "ballroom dancer", "dancer", "climber", "biker", "reader", "author",
-          "writer", "mathematician", "lover", "baseball player", "office worker", "banker",
-          "accountant", "president", "vice president", "CEO", "retail worker", "rapper",
-          "passerby", "passenger", "driver", "model", "teenager", "child", "plumber",
-          "carpenter", "web designer", "designer", "professor", "teacher");
+	var badSuperlative = new Array("Least Fluffy", "Baldest", "Worst", "Sickest",
+          "Slowest", "Meanest", "Most Angry", "Least Epic", "Saddest", "Most Depressing",
+          "Ugliest", "Least Enlightened", "Worst-Performing", "Least Powerful", "Least Humble",
+          "Smallest", "Least Elegant", "Most Normal", "Weakest", "Least Difficult",
+          "Least Furry", "Least Funny", "Ugliest", "Crankiest", "Quietest", "Meekest",
+          "Least Friendly", "Least Honest", "Dimmest");
 
-	var verbPast = new Array("walked", "finished", "silenced", "kicked", "punched", "ate",
-          "dug", "judged", "programmed", "refactored", "restored", "drew", "entertained",
-          "drove", "flew", "understood", "drank", "rapped", "quaffed", "fixed", "spilled",
-          "cast", "let go of", "engaged", "married", "rejected", "wrote", "emailed",
-          "connected", "corrected", "engineered", "created", "rolled", "reduced", "threatened",
-          "raised", "funded", "foresaw", "prophesied", "unrolled", "injected", "selected",
-          "rejected", "impacted", "scooped", "ran", "rammed", "explored", "cracked",
-          "cut", "foraged", "defenestrated", "quacked", "expunged", "rocked", "rolled",
-          "quit", "bejeweled", "bedazzled", "amused", "awakened", "sparked", "started",
-          "ended", "cheapened", "rattled", "guzzled", "gave away");
+	var person = new Array("Programmer", "Jogger", "Cyclist", "Hairdresser", "Narcissist",
+          "Police Officer", "Wife", "Balloon Artist", "Husband", "Pedestrian", "Skateboarder",
+          "Fashion Designer", "Lion Tamer", "Monkey Trainer", "Acrobat", "Crook", "Outlaw",
+          "Spelunker", "Adventurer", "Girlfriend", "Boyfriend", "Escape Artist",
+          "Father", "Mother", "Sister", "Brother", "Dog Groomer", "Soldier", "Nuclear Technician",
+          "Technician", "Ballroom Dancer", "Dancer", "Climber", "Biker", "Reader", "Author",
+          "Writer", "Mathematician", "Lover", "Baseball Player", "Office Worker", "Banker",
+          "Accountant", "President", "Vice President", "CEO", "Retail Worker", "Rapper",
+          "Passerby", "Passenger", "Driver", "Model", "Teenager", "Child", "Plumber",
+          "Carpenter", "Web Designer", "Designer", "Professor", "Teacher", "Model", "Fashion Designer",
+          "TV Dad", "TV Mom", "Former Child Star", "Journalist", "Scientist", "Grad Student",
+          "Student", "Internet Commenter");
 
-        var gerund = new Array("grooming", "walking", "driving", "eating", "yelling", "talking",
-          "modeling", "drinking", "seeing", "feeling", "entertaining", "dining", "jumping",
-          "biking", "whispering", "programming", "playing", "climbing", "fiddling", 
-          "procrastinating", "entertaining", "performing", "growing", "meditating",
-          "cleansing", "crouching");
+	var verbPast = new Array("Walked", "Finished", "Silenced", "Kicked", "Punched", "Ate",
+          "Dug", "Judged", "Programmed", "Refactored", "Restored", "Drew", "Entertained",
+          "Drove", "Flew", "Understood", "Drank", "Rapped", "Quaffed", "Fixed", "Spilled",
+          "Cast", "Let Go Of", "Engaged", "Married", "Rejected", "Wrote", "Emailed",
+          "Connected", "Corrected", "Engineered", "Created", "Rolled", "Reduced", "Threatened",
+          "Raised", "Funded", "Unrolled", "Rolled Up", "Injected", "Selected",
+          "Rejected", "Impacted", "Scooped", "Ran", "Rammed", "Explored", "Cracked",
+          "Cut", "Foraged", "Defenestrated", "Quacked", "Compacted", 
+          "Quit", "Bejeweled", "Bedazzled", "Amused", "Awakened", "Sparked", "Started",
+          "Ended", "Cheapened", "Rattled", "Guzzled", "Gave Away", "Deleted", "Elevated",
+          "Complained", "Quacked", "Barked", "Smiled", "Frowned");
 
-	var blewMeAway = new Array("blew me away", "blew my mind", "made me look again",
-          "made me rethink my position", "was unbelievable", "was just too much for me",
-          "was just too much", "was out of this world", "made me jump out of my skin",
-          "warmed my heart", "restored my faith in humanity", "made me love him even more",
-          "made me love her even more", "made me love him", "made me love her",
-          "restored my faith", "made me gasp", "warmed my heart", "taught me what love really is",
-          "restored my belief in love", "restored my spirit", "taught me about true love",
-          "cannot be believed", "is too much for this waking world", "enlightened me",
-          "made me realize how good I have it", "was my favorite", "was amazing",
-          "made me laugh out loud", "made me break down and cry", "made me cry");
+        var gerund = new Array("Grooming", "Walking", "Driving", "Eating", "Yelling", "Talking",
+          "Modeling", "Drinking", "Seeing", "Feeling", "Entertaining", "Dining", "Jumping",
+          "Biking", "Whispering", "Programming", "Playing", "Climbing", "Fiddling", 
+          "Procrastinating", "Entertaining", "Performing", "Growing", "Meditating",
+          "Cleansing", "Crouching", "Thinking", "Speculating", "Investing", "Researching",
+          "Electing", "Texting", "Hiking", "Playing",
+          "Faking", "Taking", "Baking", "Backing");
 
-	var mayShockYou = new Array("may shock you", "may surprise you", "may not be what you were expecting",
-	  "might scare you", "might change your mind", "might just make this world a better place")
+	var blewMeAway = new Array("Blew Me Away", "Blew My Mind", "Made Me Look Again",
+          "Made Me Rethink My Position", "Was Unbelievable", "Was Just Too Much For Me",
+          "Was Just Too Much", "Was Out Of This World", "Made Me Jump Out Of My Skin",
+          "Warmed My Heart", "Restored My Faith In Humanity", "Made Me Love Him Even More",
+          "Made Me Love Her Even More", "Made Me Love Him", "Made Me Love Her",
+          "Restored My Faith", "Made Me Gasp", "Warmed My Heart", "Taught Me What Love Really Is",
+          "Restored My Belief In Love", "Restored My Spirit", "Taught Me About True Love",
+          "Cannot Be Believed", "Is Just Too Much", "Enlightened Me",
+          "Made Me Realize How Good I Have It", "Was My Favorite", "Was Amazing",
+          "Made Me Laugh Out Loud", "Made Me Break Down And Cry", "Made Me Cry");
 
-        var timePeriod = new Array("second", "minute", "hour", "day", "Monday", "weekend", "week", 
-          "fortnight", "month", "year", "decade", "century", "millenium");
+	var mayShockYou = new Array("May Shock You", "May Surprise You", "May Not Be What You Were Expecting",
+	  "Might Scare You", "Might Change Your Mind", "Might Just Make This World A Better Place");
 
-        var wh = new Array("who", "what", "where", "when", "why", "how");
+        var timePeriod = new Array("Minute", "Hour", "Day", "Monday", "Weekend", "Week", "Season",
+          "Fortnight", "Month", "Year", "Decade", "Century", "Millenium");
+
+        var wh = new Array("What", "Where", "When", "Why", "How");
+
+        var decades = new Array("50's", "60's", "70's", "80's", "90's", "00's");
+
+        var places = new Array("Pittsburgh", "The United States", "New York", "Peoria", "San Francisco",
+          "North America", "South America", "Costa Rica", "Central America", "Tokyo", "Japan", "China",
+          "Mongolia", "Australia", "Perth", "Narnia", "Paris", "London", "Norway", "Sweden", "Moscow",
+          "Uzbekistan", "Kazakhstan", "Tajikistan", "Azerbaijan", "Finland", "Scotland", "Dublin", 
+          "London", "Paris", "Chicago", "Harvard", "MIT", "Carnegie Mellon University", "Ohio",
+          "Namibia", "South Africa", "Egypt", "Saudi Arabia", "the Middle East", "Iraq", "Iran",
+          "Chile", "Argentina", "Brazil", "Paraguay", "Your Neighborhood", "Your City", "Your Town",
+          "Your Country", "Hawaii", "the Faroe Islands", "Cambodia", "Laos", "Vietnam", "France",
+          "Spain", "Monaco", "The Pacific Ocean", "The Atlantic Ocean", "The Indian Ocean",
+          "Antarctica", "India", "Pakistan", "The Former Soviet Union", "The Former Yugoslavia",
+          "Germany", "Berlin", "Hungary", "Turkey", "Budapest", "Europe", "Asia", "The Phillipines",
+          "Middle-Earth", "New England", "New South Wales", "The Netherlands", "Belgium", 
+          "Lichtenstein", "Luxembourg", "Tibet", "The Himalayas", "Turkmenistan", "The Gobi Desert",
+          "The Sahara Desert", "Libya", "Manchester", "Liverpool", "Florida", "Texas", "Washington, DC",
+          "Mexico", "Canada", "Ontario", "Alaska", "California", "New Jersey", "North Dakota", "North Korea",
+          "Tashkent", "The Panama Canal", "Mexico City", "Siberia", "The Arctic Circle", "Svalbard",
+          "The Solar System");
 
         $( document ).ready(function() {
 	  Array.prototype.sample = function () {
@@ -157,17 +200,22 @@ div.viralize {
           }, 500);
 	}
 
+        function capitalize(str) {
+          return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
         function getRandomNum() {
           return (Math.floor(Math.random() * 15) + 5).toString();
         }
 
         function getRandomMost(num) {
-          return (Math.floor(Math.random() * num) + 2).toString();
+          num = parseInt(num);
+          return (Math.floor(Math.random() * num) + 1).toString();
         }
 
 	function generateOnlyPeople() {
-          var toReturn = "Only people who " + verbPast.sample() + " a " +
-            noun.sample() + " will understand this " +
+          var toReturn = "Only People Who " + verbPast.sample() + " Their " +
+            noun.sample() + " Will Understand This " +
             adjective.sample() + " " + noun.sample() + ".";
           return toReturn;
 	}
@@ -175,8 +223,8 @@ div.viralize {
 	function generateNReasons() {
           var num = getRandomNum();
           var numMost = getRandomMost(num);
-	  var toReturn = num + " reasons that this " + person.sample() + " " + verbPast.sample() +
-            " a " + noun.sample() + "."
+	  var toReturn = num + " Reasons That This " + person.sample() + " " + verbPast.sample() + " " +
+            ["His", "Her", "Their", "Somebody's"].sample() + " " + noun.sample() + "."
             + " Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
 	}
@@ -186,7 +234,7 @@ div.viralize {
 	  var superlative = (Math.random() < 0.5) ? goodSuperlative.sample() : badSuperlative.sample();
           var num = getRandomNum();
           var numMost = (Math.floor(Math.random() * num) + 1).toString();
-	  var toReturn = "The " + num + " " + superlative + " kinds of " +
+	  var toReturn = "The " + num + " " + superlative + " Kinds Of " +
             adjective.sample() + " " + person.sample() + "." + " Number " +
             numMost + " " + blewMeAway.sample() + ".";
 
@@ -195,49 +243,205 @@ div.viralize {
 
 	function generateBlewMeAway() {
 	  var toReturn = "This " + adjective.sample() + " "
-            + person.sample() + " " + verbPast.sample() + " a " + noun.sample()
-	    + ".  What happened next " + blewMeAway.sample() + ".";
+            + person.sample() + " " + verbPast.sample() + " Their " + noun.sample()
+	    + ".  What Happened Next " + blewMeAway.sample() + ".";
 	  return toReturn;
 	}
 
 	function generateMayShock() {
-          var toReturn = wh.sample() + " this " + adjective.sample() + " " + person.sample() 
-            + " " verbPast.sample() + " their " + noun.sample() + " " + mayShockYou.sample() + ".";
+          var toReturn = capitalize(wh.sample()) + " This " + adjective.sample() + " " + person.sample()
+            + " " + verbPast.sample() 
+            + " Their " + noun.sample() 
+            + " " + mayShockYou.sample() + ".";
           return toReturn;
         }
 
         function generateTwist() {
-          var toReturn = "I thought this " + person.sample() + " was " + adjective.sample() 
-            + " until I realized their "
-            + noun.sample() + " was " + adjective.sample() + "!";
+          var toReturn = "I Thought This " + person.sample() + " Was " + adjective.sample() 
+            + " Until I Realized Their "
+            + noun.sample() + " " + ["Was", "Is", "Could Be", "Might Be"].sample() + " " + adjective.sample() + "!";
           return toReturn;
 	}
 
 	function generateHotTrend() {
-          var toReturn = "The hot new trend for this " + timePeriod.sample() + "? " + gerund.sample()
-            + " your " + noun.sample() + " just like a " + person.sample() + "!";
+          var toReturn = "The Hot New Trend For This " + timePeriod.sample() + "? " + gerund.sample()
+            + " Your " + noun.sample() + " Just Like A Celebrity " + person.sample() + "!";
           return toReturn;
         }
 
 	function generateSecrets() {
           var num = getRandomNum();
-          var numMost = getRandomMost();
-          var toReturn = num + " secrets of the world's most famous " + person.sample() + ". "
+          var numMost = getRandomMost(num);
+          var toReturn = num + " Secrets Of The World's Most Famous " + person.sample() + ". "
             + "Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
         }
 
 	function generateWhatXAreYou() {
-          var toReturn = "What kind of " + adjective.sample() + " " + person.sample() + " would you be? "
-            + "Take our quiz and find out!";
+          var toReturn = "What Kind Of " + adjective.sample() + " " + person.sample() + " Would You Be? "
+            + "Take Our Quiz And Find Out!";
           return toReturn;          
         }	
 
+        function generateStopEverything() {
+          var toReturn = ["Stop", "Drop", "Forget"].sample() + " Everything And " 
+            + ["Look At", "Behold", "Stare At"].sample() + " This " + adjective.sample()
+            + " " + noun.sample() + "!";
+          return toReturn;
+        }
+
+        function generateOnlyXKids() {
+          p = person.sample();
+          n = noun.sample();
+          var toReturn = "Only " + decades.sample() + " Kids Will Understand This " +
+            adjective.sample() + " " + [p, n].sample()  + "!";
+          return toReturn;
+        }
+
+        function generatePics() {
+          var num = getRandomNum(); 
+          var numMost = getRandomMost(num);
+          var toReturn = num + " " + ["Pics", "Pictures", "Images", "Snapshots"].sample() + " Of The World's "
+            + goodSuperlative.sample() + " " + pluralNoun.sample() + "!  Number " + numMost + " Is So "
+            + adjective.sample() + "!";
+          return toReturn; 
+        }
+
+        function generateOmg() {
+          var p = person.sample();
+          var n = noun.sample();
+          var toReturn = "OMG.  You " 
+            + ["need to", "really need to", "should", "have to", "MUST", "can"].sample()
+            + " " + ["see", "check out", "look at", "hang out with", "figure out"].sample()
+            + " this " + adjective.sample() + " " + [p, n].sample() + "!";
+         }
+
+         function generateBetter() {
+           var num = getRandomNum();
+           var numMost = getRandomMost(num);
+           var toReturn = num + " " + ["Reasons", "Ways"].sample() + " that " + gerund.sample() 
+             + " Can Make You A More " + adjective.sample() + " " + person.sample() + ".  Number "
+             + numMost + " Involves " + gerund.sample() + " " + ["With", "To"].sample() 
+             + " Your " + noun.sample() + ".";
+           return toReturn;
+        }
+
+        function generateThoughts() {
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
+          b = blewMeAway.sample();
+          m = mayShockYou.sample();
+          var toReturn = num + " Thoughts You Have When " + gerund.sample() 
+            + ["For The First Time", "For The Last Time", "Repeatedly", "Unexpectedly",
+               "On a Saturday", "On A Monday", "With Your Parents", "On A Boat", "With Your Crush",
+               "In Your Hometown", "At Your High School Reunion", "With Your Prom Date"].sample() + ". "
+            + "Number " + numMost + " " + [b, m].sample() + ".";
+        }
+
+        function generateTheBestXInY() {
+          g = goodSuperlative.sample();
+          b = badSuperlative.sample();
+          var toReturn = "This Is " + ["Definitely", "Certainly", "Obviously", "Without A Doubt", 
+            "Clearly"].sample() + " the " + [g,b].sample() + " " + noun.sample() + " In All Of "
+            + places.sample() + ".";
+          return toReturn;
+
+        }
+
+        function generateWays() {
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
+          b = blewMeAway.sample();
+          m = mayShockYou.sample();
+          p = pluralNoun.sample();
+          s = noun.sample();
+          var toReturn = num + " " + adjective.sample() + " Ways That The " + goodSuperlative.sample() 
+            + " " + person.sample() + " is "+ gerund.sample() + " Their "
+            + [p, s].sample() + ".  Number " + numMost + " " + [b, m].sample() + ".";
+          return toReturn;
+        }
+
+        function generateXInY() {
+          var toReturn = "What You Don't Know About " + adjective.sample() + " " + pluralNoun.sample()
+            + " In " + places.sample() + " " + mayShockYou.sample() + "!";
+          return toReturn;
+        }
+
+        function generateHonest() {
+          var toReturn = "If Everybody In " + places.sample() + " Were Honest, They'd Tell You That Their " 
+            + pluralNoun.sample() + " Are " + ["Really Just", "Actually Just", "In Reality", "Supposed To Be"].sample()
+            + " " + adjective.sample() + " " + pluralNoun.sample() + ".";
+          return toReturn;
+        }
+
+        function generateVideo() {
+          var g = goodSuperlative.sample();
+          var b = badSuperlative.sample();
+          var a = adjective.sample();					     
+          var p = pluralNoun.sample();
+          var n = noun.sample();
+          var toReturn = ["LIVE", "RAW", "AMAZING", "REAL-TIME"].sample() + " Video Of " 
+            + [a, b, g].sample() + " " + person.sample() + " "
+            + gerund.sample() + " Somebody's " + adjective.sample() + " " + [p, n].sample() + "!";
+          return toReturn;
+        }
+
+        function generatePerfectResponses() {
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
+          var toReturn = num + " Perfect Responses To Your " + person.sample() + "When They "
+            + verbPast.sample() + " Your " + adjective.sample() + " " + noun.sample() + ".  Number"
+            + numMost + " " + blewMeAway.sample() + ".";
+          return toReturn;
+        }
+
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
-            "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you");
+            "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
+            "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses");
 
 	  switch (viralTemplates.sample()) {
+
+            case "perfect-responses":
+              return generatePerfectResponses();
+              break;
+
+            case "video":
+              return generateVideo();
+              break;
+
+            case "honest":
+              return generateHonest();
+              break;
+
+            case "x-in-y":
+              return generateXInY();
+              break;
+
+            case "ways":
+              return generateWays();
+              break;
+
+            case "the-best-x-in-y":
+              return generateTheBestXInY();
+              break;
+
+            case "thoughts":
+              return generateThoughts();
+              break;
+
+            case "better":
+              return generateBetter();
+              break;
+
+            case "omg":
+              return generateOmg();
+              break;
+
+            case "pics":
+              return generatePics();
+              break;
+  
 	    case "blew-me-away":
 	      return generateBlewMeAway();
 	      break;
@@ -266,6 +470,10 @@ div.viralize {
 	      return generateHotTrend();
 	      break;
 
+            case "stop-everything":
+              return generateStopEverything();
+              break;
+
 	    case "secrets":
 	      return generateSecrets();
 	      break;
@@ -273,6 +481,10 @@ div.viralize {
 	    case "what-x-are-you":
 	      return generateWhatXAreYou();
 	      break;
+
+            case "only-x-kids":
+              return generateOnlyXKids();
+              break;
 
 	    default:
 	      return "noogie";
