@@ -70,7 +70,10 @@ div.viralize {
           "Coffee Mug", "Computer", "Monitor", "Ball", "Bulldozer", "Tractor-Trailer", "Vampire Bat",
           "Police Car", "Fire Truck", "Camera", "Steering Wheel", "Microphone", "Microwave",
           "Xylophone", "Tin Can", "Bag of Manure", "Bag of Money", "Cash Register", "Freezer",
-          "Stapler", "Copier", "Irrigation Ditch", "Barn", "Airport", "Stick", "Piece of Sushi");
+          "Stapler", "Copier", "Irrigation Ditch", "Barn", "Airport", "Stick", "Piece of Sushi",
+          "Hot Dog", "Pumpkin Spice Latte", "Mocha", "Cappucino", "Soap", "Dance", "Pick-Up Line", "Joke",
+          "Dance Club", "Country Bar", "Prison", "Fairy", "Sword", "Wreath", "Ghost", "Spirit",
+          "Can of Beer", "Bottle of Booze");
 
         var pluralNoun = new Array("Dogs", "Cats", "Birds", "Antlers", "Antennae", "Ducks", "Goats",
           "Books", "Plants", "Ants", "Blankets", "Cookies", "Cakes", "Whales", "Feathers", "Collages",
@@ -88,10 +91,15 @@ div.viralize {
           "Hotels", "Games", "Board Games", "Kittens", "Conspiracies", "Mechanics", "Racers",
           "Rollercoasters", "Clowns", "Kumquats", "Garbanzo Beans", "Navy Beans", "Aardvarks",
           "Alligators", "Yaks", "Circuses", "Lions", "Lollipops", "Buffet Tables", "Monkeys",
-          "Space Monkeys", "Celebrities", "Quizzes", "Illnesses", "Cheese Wheels");
+          "Space Monkeys", "Celebrities", "Quizzes", "Illnesses", "Cheese Wheels", "Carrots",
+          "Leaves of Spinach", "Cucumbers", "Boxes of Cereal", "Olives", "Anteaters", "Fantasies",
+          "Objections", "Receipts", "Whiteboards", "Desks", "Podiums", "Gold Bars", "Canned Tomatoes",
+          "Bubbles", "Bumblebees", "Basketballs", "Christmas Trees", "Pumpkins", "Pumpkin Spice Lattes",
+          "Ditches", "Polling Places", "High Heels", "Lamps", "Necklaces", "Earrings", "Three-Piece Suits",
+          "Pick-Up Lines", "Dances", "Dance Clubs", "Fairies", "Bottles of Vodka", "Microwave Burritos");
 
 	var adjective = new Array("Big", "Tall", "Small", "Little", "Short", "Quaint", "Ugly", "Obsolete",
-          "Shiny", "Red", "Yellow", "Orange", "Funny", "Sad", "Green", "Blue", "Massive",
+          "Shiny", "Magenta", "Funny", "Sad", "Fuchsia", "Beige", "Massive",
           "Dead", "Alive", "Smart", "Dumb", "Flat", "Bumpy", "Vivacious", "Endearing",
           "Slim", "Intense", "Bloodthirsty", "Beautiful", "Omniscient", "Omnipotent",
           "Flowery", "Purple", "Entertaining", "Short-Lived", "Sandy", "Rough", "Imperfect",
@@ -105,7 +113,15 @@ div.viralize {
           "High-Strung", "Famous", "Light", "Dark", "Feral", "Hairy", "Unkempt", "Empty",
           "Leaky", "Criminal", "Electric", "Sassy", "Frumpy", "Tiny", "Itty-Bitty",
           "Prehistoric", "Immense", "Metallic", "Sharp", "Historical", "Fierce", "Loud",
-          "Lunar", "Interstellar", "Intergalactic");
+          "Lunar", "Interstellar", "Intergalactic", "Bohemian", "Bored", "Suspicious", 
+          "Flirtatious", "Street-Smart", "Forgetful", "Elongated", "Religious", "Atheist", 
+          "Abominable", "Weak", "Ambidextrous", "Irredentist", "Tooth-Filled", "Ravenous", 
+          "Anarchistic", "Well-Directed", "Well-Fed", "Well-Maintained", "Deep", "Shallow",
+          "Victorian", "Formal", "Informal", "Creamy", "Tangy", "Fresh", "Magical", "Mystical",
+          "Ancient", "Secret", "Prophetic", "Immortal", "Undying", "Bulging", "Far-Sighted",
+          "Short-Sighted", "Antediluvian", "Latin", "European", "Mermaid-Like", "Medical",
+          "Straightforward", "Literary", "Critical", "Excited", "Backward", "Rabid", "Bombastic",
+          "Stinky", "Smelly", "Wanton", "Confusing", "Intellectual", "Understated", "Cheesy");
 
 	var goodSuperlative = new Array("Cutest", "Fluffiest", "Best", "Shiniest", "Most Awesome",
           "Fastest", "Nicest", "Most Awe-Inspiring", "Happiest", "Most Enlightened",
@@ -114,14 +130,22 @@ div.viralize {
           "Furriest", "Funniest", "Most Hilarious", "Most Beautiful", "Prettiest", "Loudest",
           "Noisiest", "Brightest", "Smartest", "Most Honest", "Friendliest", "Hairiest",
           "Most Dynamic", "Latest", "Saltiest", "Dirtiest", "Cleanest", "Most Inspiring",
-          "Prettiest", "Deepest", "Roundest", "Sharpest" );
+          "Prettiest", "Deepest", "Roundest", "Sharpest", "Skinniest", "Most Gentle", "Most Energetic",
+          "Most Flexible", "Tallest", "Sharpest", "Least Hungry", "Most Calming", "Most Entertaining",
+          "Most Professional", "Most Giving", "Most Loving", "Finest", "Wooliest", "Most Rambunctious",
+          "Most Ambitious", "Quietest", "Highest", "Most Intellectual", "Most Straightforward",
+          "Richest", "Longest", "Most Masculine", "Most Feminine", "Most Hopeful", "Cheesiest" );
 
 	var badSuperlative = new Array("Least Fluffy", "Baldest", "Worst", "Sickest",
-          "Slowest", "Meanest", "Most Angry", "Least Epic", "Saddest", "Most Depressing",
+          "Slowest", "Meanest", "Angriest", "Least Epic", "Saddest", "Most Depressing",
           "Ugliest", "Least Enlightened", "Worst-Performing", "Least Powerful", "Least Humble",
           "Smallest", "Least Elegant", "Most Normal", "Weakest", "Least Difficult",
           "Least Furry", "Least Funny", "Ugliest", "Crankiest", "Quietest", "Meekest",
-          "Least Friendly", "Least Honest", "Dimmest", "Sleepiest", "Most Confused");
+          "Least Friendly", "Least Honest", "Dimmest", "Sleepiest", "Most Confused", "Fattest",
+          "Most Evil", "Shortest", "Smallest", "Sleepiest", "Dopiest", "Hungriest", "Most Vicious",
+          "Least Professional", "Least Entertaining", "Loudest", "Least Giving", "Most Wiry",
+          "Least Ambitious", "Loudest", "Lowest", "Least Intellectual", "Poorest", "Most Confusing",
+          "Least Masculine", "Least Feminine", "Least Hopeful", "Least Cheesy");
 
 	var person = new Array("Programmer", "Jogger", "Cyclist", "Hairdresser", "Narcissist",
           "Police Officer", "Wife", "Balloon Artist", "Husband", "Pedestrian", "Skateboarder",
@@ -145,7 +169,11 @@ div.viralize {
           "Exchange Student", "Confidant", "Spy", "Tailor", "Card Shark", "Pool Shark",
           "Boss", "Security Guard", "Artist", "Social Media Addict", "Maid", "Party Host", 
           "Hostest With the Mostest", "TV Personality", "Talk Show Host", "Comedian", "Partygoer",
-          "Friend");
+          "Friend", "Blind Date", "Hero", "Superhero", "Bandit", "Jailbird", "Nerd", "Dork", "Geek",
+          "Prisoner", "Bodybuilder", "Internet Addict", "Vegan", "Vegetarian", "Nose-Picker", 
+          "Meth Dealer", "Drill Sergeant", "Housewife", "Police Officer", "Science Fiction Fan",
+          "Ex-Boyfriend", "Ex-Girlfriend", "Mariachi Singer", "Lounge Singer", "Bird Caller",
+          "Stamp Collector", "Watch Enthusiast");
 
 	var verbPast = new Array("Walked", "Finished", "Silenced", "Kicked", "Punched", "Ate",
           "Dug", "Judged", "Programmed", "Refactored", "Restored", "Drew", "Entertained",
@@ -183,9 +211,10 @@ div.viralize {
           "Changing", "Watching", "Following", "Stopping", "Creating", "Generating", "Reading",
           "Leading", "Speaking", "Spending", "Growing", "Opening", "Closing", "Walking", "Winning", "Losing",
           "Teaching", "Offering", "Remembering", "Appearing", "Considering", "Buying", "Selling",
-          "Serving", "Dying", "Sending", "Stayeing", "Building", "Destroying", "Passing", "Failing",
+          "Serving", "Dying", "Sending", "Staying", "Building", "Destroying", "Passing", "Failing",
           "Raising", "Cooking", "Selling", "Deciding", "Returning", "Regressing", "Explaining",
-          "Expanding", "Breaking", "Developing", "Receiving", "Covering", "Drawing", "Choosing", "Producing");
+          "Expanding", "Breaking", "Developing", "Receiving", "Covering", "Drawing", "Choosing", "Producing",
+          "Drooling", "Slobbering");
 
 	var blewMeAway = new Array("Blew Me Away", "Blew My Mind", "Made Me Look Again",
           "Made Me Rethink My Position", "Was Unbelievable", "Was Just Too Much For Me",
@@ -321,7 +350,7 @@ div.viralize {
           var toReturn = "The Hot New Trend For " + ["This", "Next"].sample() + " " 
             + timePeriod.sample() + "? " + gerund.sample()
             + " " + ["Your", "The"].sample() + " " + noun.sample() 
-            + " Just Like A Celebrity " + person.sample() + "!";
+            + " Just Like A " + person.sample() + "!";
           return toReturn;
         }
 
@@ -378,10 +407,7 @@ div.viralize {
            var num = getRandomNum();
            var numMost = getRandomMost(num);
            var toReturn = num + " " + ["Reasons", "Ways"].sample() + " that " + gerund.sample() 
-             + " Can Make You A " + adjective.sample() + " " + person.sample() + ".  Number "
-             + numMost + " Involves " + gerund.sample() + " " 
-             + ["With", "To", "Around", "Next To", "Under", ""].sample() 
-             + " Your " + noun.sample() + ".";
+             + " Can Make You " + adjective.sample() + " When You're In " + places.sample() + ".";
            return toReturn;
         }
 
@@ -390,7 +416,7 @@ div.viralize {
           var numMost = getRandomMost(num);
           b = blewMeAway.sample();
           m = mayShockYou.sample();
-          var toReturn = num + " Thoughts You Have When " + gerund.sample() + " "
+          var toReturn = num + " " + ["Thoughts", "Reactions"].sample() + " You Have When " + gerund.sample() + " "
             + ["For The First Time", "For The Last Time", "Repeatedly", "Unexpectedly",
                "On a Saturday", "On A Monday", "With Your Parents", "On A Boat", "With Your Crush",
                "In Your Hometown", "At Your High School Reunion", "With Your Prom Date"].sample() + ". "
@@ -401,8 +427,9 @@ div.viralize {
         function generateTheBestXInY() {
           g = goodSuperlative.sample();
           b = badSuperlative.sample();
-          var toReturn = "This Is " + ["Definitely", "Certainly", "Obviously", "Without A Doubt", 
-            "Clearly"].sample() + " the " + [g,b].sample() + " " + noun.sample() + " In All Of "
+          var toReturn = ["This", "That"].sample() + " " + ["Is", "Was"].sample() 
+            + " " + ["Definitely", "Certainly", "Obviously", "Without A Doubt", "Clearly"].sample() 
+            + " the " + [g,b].sample() + " " + noun.sample() + " In All Of "
             + places.sample() + ".";
           return toReturn;
 
@@ -451,7 +478,7 @@ div.viralize {
           var num = getRandomNum();
           var numMost = getRandomMost(num);
           var toReturn = num + " Perfect " + ["Responses", "Comebacks"].sample() 
-            + " To Your " + person.sample() + " When They "
+            + " To Your " + person.sample() + " When " + ["He", "She"].sample() + " "
             + verbPast.sample() + " Your " + adjective.sample() + " " + noun.sample() + ".  Number "
             + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
@@ -478,15 +505,29 @@ div.viralize {
           return toReturn;
         }
 
+        function generateXWasAY() {
+          var toReturn = "I Always " + ["Thought", "Knew", "Figured", "Suspected"].sample() + " That "
+            + ["This", "My", "That"].sample() + " " + person.sample() + " Was " + adjective.sample() 
+            + ["...", " -", ".", "!"].sample() + " But Then I " + ["Discovered", "Saw", "Found Out"].sample()
+            + " That " + ["He", "She"].sample() + " " + verbPast.sample() + " "
+            + ["This", "That", "The", "An Entire", "My"].sample() + " " + noun.sample()
+            + ["...", "!", "."].sample();
+          return toReturn;
+        }
+
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
             "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
             "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses",
-            "good-bad-super", "if-x-like-y", "if-x-like-x");
+            "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y");
           decision = viralTemplates.sample();
-          // decision = "thoughts";
+          // decision = "x-was-a-y";
 
 	  switch (decision) {
+
+            case "x-was-a-y":
+              return generateXWasAY();
+              break;
 
             case "if-x-like-y":
               return generateIfXLikeY();
