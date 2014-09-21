@@ -73,7 +73,8 @@ div.viralize {
           "Stapler", "Copier", "Irrigation Ditch", "Barn", "Airport", "Stick", "Piece of Sushi",
           "Hot Dog", "Pumpkin Spice Latte", "Mocha", "Cappucino", "Soap", "Dance", "Pick-Up Line", "Joke",
           "Dance Club", "Country Bar", "Prison", "Fairy", "Sword", "Wreath", "Ghost", "Spirit",
-          "Can of Beer", "Bottle of Booze");
+          "Can of Beer", "Bottle of Booze", "Jack O' Lantern", "Argument", "Basement", "Lawn Chair",
+          "Christmas Tree Ornament", "Toilet Paper Roll");
 
         var pluralNoun = new Array("Dogs", "Cats", "Birds", "Antlers", "Antennae", "Ducks", "Goats",
           "Books", "Plants", "Ants", "Blankets", "Cookies", "Cakes", "Whales", "Feathers", "Collages",
@@ -96,10 +97,17 @@ div.viralize {
           "Objections", "Receipts", "Whiteboards", "Desks", "Podiums", "Gold Bars", "Canned Tomatoes",
           "Bubbles", "Bumblebees", "Basketballs", "Christmas Trees", "Pumpkins", "Pumpkin Spice Lattes",
           "Ditches", "Polling Places", "High Heels", "Lamps", "Necklaces", "Earrings", "Three-Piece Suits",
-          "Pick-Up Lines", "Dances", "Dance Clubs", "Fairies", "Bottles of Vodka", "Microwave Burritos");
+          "Pick-Up Lines", "Dances", "Dance Clubs", "Fairies", "Bottles of Vodka", "Microwave Burritos",
+          "Convenience Stores", "Birthday Cakes", "Philosophy Textbooks", "Hoodies", "Hipster Glasses",
+          "Badasses", "Leather Jackets", "Jean Jackets", "Gorillas", "Mortgages", "Skinny Jeans",
+          "Yoga Pants", "Snack Cakes", "Suits", "Cards", "Aliens", "UFOs", "Loch Ness Monsters",
+          "Mexican Jumping Beans", "Grapes", "Wines", "Sandwiches", "Flannel Shirts", "Pajamas",
+          "Nightlights", "Futons", "Swings", "Hiking Trails", "Telephone Poles", "Ice Cream Sandwiches",
+          "Stadiums", "Tattoos", "Fingernails", "Radiators", "Car Engines", "Bowling Alleys", 
+          "Zoos", "Ice Cream Shops", "Dance Halls", "Beer Halls", "Polkas", "Waltzes");
 
 	var adjective = new Array("Big", "Tall", "Small", "Little", "Short", "Quaint", "Ugly", "Obsolete",
-          "Shiny", "Magenta", "Funny", "Sad", "Fuchsia", "Beige", "Massive",
+          "Shiny", "Magenta", "Funny", "Sad", "Fuchsia", "Beige", "Massive", "Refinanced", "Tight", "Loose",
           "Dead", "Alive", "Smart", "Dumb", "Flat", "Bumpy", "Vivacious", "Endearing",
           "Slim", "Intense", "Bloodthirsty", "Beautiful", "Omniscient", "Omnipotent",
           "Flowery", "Purple", "Entertaining", "Short-Lived", "Sandy", "Rough", "Imperfect",
@@ -121,7 +129,10 @@ div.viralize {
           "Ancient", "Secret", "Prophetic", "Immortal", "Undying", "Bulging", "Far-Sighted",
           "Short-Sighted", "Antediluvian", "Latin", "European", "Mermaid-Like", "Medical",
           "Straightforward", "Literary", "Critical", "Excited", "Backward", "Rabid", "Bombastic",
-          "Stinky", "Smelly", "Wanton", "Confusing", "Intellectual", "Understated", "Cheesy");
+          "Stinky", "Smelly", "Wanton", "Confusing", "Intellectual", "Understated", "Cheesy",
+          "Devious", "Pumpkin Spice", "Overblown", "Underestimated", "Underwater", "Muscular",
+          "Efficient", "Well-Organized", "Smooth", "Delicious", "Creamy", "Dry", "Smelly",
+          "Independent", "Free", "Cheap");
 
 	var goodSuperlative = new Array("Cutest", "Fluffiest", "Best", "Shiniest", "Most Awesome",
           "Fastest", "Nicest", "Most Awe-Inspiring", "Happiest", "Most Enlightened",
@@ -214,7 +225,10 @@ div.viralize {
           "Serving", "Dying", "Sending", "Staying", "Building", "Destroying", "Passing", "Failing",
           "Raising", "Cooking", "Selling", "Deciding", "Returning", "Regressing", "Explaining",
           "Expanding", "Breaking", "Developing", "Receiving", "Covering", "Drawing", "Choosing", "Producing",
-          "Drooling", "Slobbering");
+          "Drooling", "Slobbering", "Slandering", "Rejecting", "Undermining", "Picking", "Kicking",
+          "Punching", "Loving", "Editorializing", "Moving", "Smoothing", "Linking", "Crying",
+          "Laughing", "Endowing", "Mocking", "Snacking", "Eating", "Shooting", "Dating", "Marrying",
+          "Engaging");
 
 	var blewMeAway = new Array("Blew Me Away", "Blew My Mind", "Made Me Look Again",
           "Made Me Rethink My Position", "Was Unbelievable", "Was Just Too Much For Me",
@@ -228,10 +242,10 @@ div.viralize {
           "Made Me Laugh Out Loud", "Made Me Break Down And Cry", "Made Me Cry");
 
 	var mayShockYou = new Array("May Shock You", "May Surprise You", "May Not Be What You Were Expecting",
-	  "Might Scare You", "Might Change Your Mind", "Might Just Make This World A Better Place");
+	  "Might Scare You", "Might Just Make This World A Better Place");
 
         var timePeriod = new Array("Minute", "Hour", "Day", "Monday", "Weekend", "Week", "Season",
-          "Fortnight", "Month", "Year", "Decade", "Century", "Millenium");
+          "Fortnight", "Month", "Year", "Decade", "Century", "Millenium", "Summer", "Winter", "Fall", "Spring");
 
         var wh = new Array("What", "Where", "When", "Why", "How");
 
@@ -253,7 +267,9 @@ div.viralize {
           "The Sahara Desert", "Libya", "Manchester", "Liverpool", "Florida", "Texas", "Washington, DC",
           "Mexico", "Canada", "Ontario", "Alaska", "California", "New Jersey", "North Dakota", "North Korea",
           "Tashkent", "The Panama Canal", "Mexico City", "Siberia", "The Arctic Circle", "Svalbard",
-          "The Solar System", "Walla Walla, Washington", "Cucamonga", "Squirrel Hill");
+          "The Solar System", "Walla Walla, Washington", "Cucamonga", "Squirrel Hill", "Yemen", "Qatar",
+          "Abu Dhabi", "Baghdad", "Beirut", "Beijing", "Singapore", "Hong Kong", "Pakistan", "Bangladesh",
+          "Nepal", "Thailand", "Guatemala", "El Salvador", "Panama", "Chile", "Argentina", "Brazil");
 
         $( document ).ready(function() {
 	  Array.prototype.sample = function () {
@@ -270,6 +286,14 @@ div.viralize {
           event.preventDefault();
 
         });
+
+        $( "div" ).click(function( event ) {
+
+	  showViralHeadline();
+          event.preventDefault();
+
+        });
+
 
         function getRandomDarkColor() {
           var colors = new Array("#aa0000", "#999999", "#000000", "#003366", "#339933",
@@ -357,7 +381,7 @@ div.viralize {
 	function generateSecrets() {
           var num = getRandomNum();
           var numMost = getRandomMost(num);
-          var toReturn = num + " Secrets Of A " + adjective.sample() + " " + person.sample() + ". "
+          var toReturn = num + " Secrets Of This " + adjective.sample() + " " + person.sample() + ". "
             + "Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
         }
@@ -515,15 +539,49 @@ div.viralize {
           return toReturn;
         }
 
+        function generateTop10() {
+          var toReturn = "The 10 " + ["Top", "Hottest", "Wildest", "Sexiest"].sample() 
+            + " " + pluralNoun.sample() + " In " + places.sample() +"!";
+          return toReturn;
+        }
+
+        function generateWeirdTrick() {
+          var toReturn = ["Dad", "Mom", "Teacher", "Grandfather", "Grandmother"].sample() + " In " 
+            + places.sample() + " Discovers One Weird Trick For " + gerund.sample() + " "
+            + pluralNoun.sample() + "!";
+          return toReturn;
+        }
+
+        function generateDidNotKnow() {
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
+          var toReturn =  num +" Things You Didn't Know About " + pluralNoun.sample() + " In "
+            + places.sample() + ".  " + "Number " + numMost + " " + blewMeAway.sample() + ".";
+          return toReturn;
+        }
+
+
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
             "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
             "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses",
-            "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y");
+            "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y", "top-10", "weird-trick", "did-not-know");
           decision = viralTemplates.sample();
-          // decision = "x-was-a-y";
+          // decision = "did-not-know";
 
 	  switch (decision) {
+
+            case "did-not-know":
+              return generateDidNotKnow();
+              break;
+
+            case "weird-trick":
+              return generateWeirdTrick();
+              break;
+
+            case "top-10":
+              return generateTop10();
+              break;
 
             case "x-was-a-y":
               return generateXWasAY();
@@ -626,7 +684,7 @@ div.viralize {
               break;
 
 	    default:
-	      return "noogie";
+	      return decision;
 	  }
 
 	}
