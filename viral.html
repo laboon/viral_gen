@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta description="Generate infinite viral headlines.  Never be at a loss when you need clickbait." />
     <title>Infinite Viral</title>
 
 <style>
@@ -19,6 +20,18 @@ div.viralize {
 
 </style>
 
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'infiniteviral', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 </head>
 <body>
@@ -239,7 +252,7 @@ div.viralize {
           "Restored My Belief In Love", "Restored My Spirit", "Taught Me About True Love",
           "Cannot Be Believed", "Is Just Too Much", "Enlightened Me",
           "Made Me Realize How Good I Have It", "Was My Favorite", "Was Amazing",
-          "Made Me Laugh Out Loud", "Made Me Break Down And Cry", "Made Me Cry");
+          "Made Me Laugh Out Loud", "Made Me Break Down And Cry", "Made Me Cry", "Gave Me Chills");
 
 	var mayShockYou = new Array("May Shock You", "May Surprise You", "May Not Be What You Were Expecting",
 	  "Might Scare You", "Might Just Make This World A Better Place");
@@ -286,14 +299,6 @@ div.viralize {
           event.preventDefault();
 
         });
-
-        $( "div" ).click(function( event ) {
-
-	  showViralHeadline();
-          event.preventDefault();
-
-        });
-
 
         function getRandomDarkColor() {
           var colors = new Array("#aa0000", "#999999", "#000000", "#003366", "#339933",
@@ -430,7 +435,7 @@ div.viralize {
          function generateBetter() {
            var num = getRandomNum();
            var numMost = getRandomMost(num);
-           var toReturn = num + " " + ["Reasons", "Ways"].sample() + " that " + gerund.sample() 
+           var toReturn = num + " " + ["Reasons", "Ways"].sample() + " That " + gerund.sample() 
              + " Can Make You " + adjective.sample() + " When You're In " + places.sample() + ".";
            return toReturn;
         }
@@ -560,16 +565,135 @@ div.viralize {
           return toReturn;
         }
 
+       function generatePercent() {
+          var percent = (Math.floor(Math.random() * 98) + 1).toString() + "%";
+
+          var toReturn =  ["A Shocking", "An Amazing", "Incredibly,", "An Unbelievable", "Only"].sample() + " "
+            + percent + " Of People In " + places.sample() + " " + ["Think", "Know", "Understand"].sample() 
+            + " That " +  pluralNoun.sample() + " Are "
+            + ["Actually", "Really", "In Reality", "Supposed To Be"].sample() + " "
+            + pluralNoun.sample() + "."
+          return toReturn;
+        }
+        
+        function generateThinkXAreY() {
+        
+          n = pluralNoun.sample();
+          a = adjective.sample();
+
+          var toReturn = "This " + person.sample() + " " + ["Insists", "Thinks", "Says"].sample() + " That " 
+            + pluralNoun.sample() + " Are " + [n,a].sample() + ". This " 
+            + ["Movie", "Video", "Article", "Speech"].sample() + " Proves " 
+            + ["Him", "Her"].sample() + " " + ["Right", "Wrong"].sample() + ".";
+          return toReturn;
+        }
+
+        function generateForOneDay() {
+          vp = verbPast.sample();
+          var toReturn = "For One " + timePeriod.sample() + ", I " + vp + " What This "
+            + person.sample() + " " + vp + ".  It Was " 
+            + ["Amazing", "Beautiful", "Mind-Blowing", "Depressing", "Heavenly"].sample() + ".";
+          return toReturn;
+        }
+
+        function generateItOnlyTakes() {
+          var toReturn = "It Only Takes One " + timePeriod.sample() + " To Show How These "
+            + pluralNoun.sample() + " Are " + gerund.sample() + " Their " + pluralNoun.sample() + ".";
+          return toReturn;
+        }
+
+        function generateDescribe() {
+          var toReturn = "I've Never Heard Anyone " + ["Describe", "Explain", "Talk About"].sample() 
+            + " " + gerund.sample() + " Their " + noun.sample() + " Like This Before.";
+          return toReturn;
+        }
+
+        function generateTogether() {
+          var num = getRandomNum();
+          var toReturn = "A " + person.sample() + " And A " + person.sample() + " "
+            + ["Were Together", "Were Partners", "Were Married", "Dated"].sample() 
+            + " For " + num + " Years.  Then " + ["He", "She"].sample() + " "
+            + ["Found Out About", "Discovered", "Forgot", "Uncovered"].sample()
+            + " The " + noun.sample() + ".";
+          return toReturn;
+
+        }
+
+        function generateThisPerson() {
+          var toReturn = "This " + ["Man", "Woman"].sample() + " From " + places.sample()
+            + " Made A Lot of People " 
+            + ["Angry", "Mad", "Upset", "Happy", "Sad", "Crazy"].sample()
+            + " Just By "
+            + gerund.sample() + " Some " + pluralNoun.sample() + ".";
+          return toReturn;
+        }
+
+        function generateWord() {
+          var num = getRandomNum();
+          var toReturn = "This " + num + "-Letter Word Could Be Offensive To Your "
+            + person.sample() + ".  Or Anyone Who " + ["Is", "Is Not"].sample()
+            + " " + adjective.sample() + ".";
+          return toReturn;
+
+        }
+
+
+        function generateIWish() {
+          var toReturn = "This " + person.sample() + " Was Just " + gerund.sample()
+            + " In " + places.sample() + ". I Wish That Didn't "
+            + ["Shock", "Scare", "Surprise", "Endanger", "Delight"].sample() + " Me.";
+          return toReturn;
+
+        }
 
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
             "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
             "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses",
-            "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y", "top-10", "weird-trick", "did-not-know");
+            "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y", "top-10", "weird-trick", "did-not-know",
+            "percent", "think-x-are-y", "for-one-day", "it-only-takes", "describe", "together", "this-person",
+            "word", "i-wish");
+
           decision = viralTemplates.sample();
-          // decision = "did-not-know";
+          // decision = "i-wish";
 
 	  switch (decision) {
+
+            case "i-wish":
+              return generateIWish();
+              break;
+
+            case "word":
+              return generateWord();
+              break;
+
+            case "this-person":
+              return generateThisPerson();
+              break;
+
+            case "together":
+              return generateTogether();
+              break;
+
+            case "describe":
+              return generateDescribe();
+              break;
+
+            case "it-only-takes":
+              return generateItOnlyTakes();
+              break;
+
+            case "for-one-day":
+              return generateForOneDay();
+              break;
+
+            case "think-x-are-y":
+              return generateThinkXAreY();
+              break;
+
+            case "percent":
+              return generatePercent();
+              break;					    
 
             case "did-not-know":
               return generateDidNotKnow();
