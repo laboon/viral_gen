@@ -271,7 +271,7 @@ ga('send', 'pageview');
           "London", "Paris", "Chicago", "Harvard", "MIT", "Carnegie Mellon University", "Ohio",
           "Namibia", "South Africa", "Egypt", "Saudi Arabia", "the Middle East", "Iraq", "Iran",
           "Chile", "Argentina", "Brazil", "Paraguay", "Your Neighborhood", "Your City", "Your Town",
-          "Your Country", "Hawaii", "the Faroe Islands", "Cambodia", "Laos", "Vietnam", "France",
+          "Your Country", "Hawaii", "The Faroe Islands", "Cambodia", "Laos", "Vietnam", "France",
           "Spain", "Monaco", "The Pacific Ocean", "The Atlantic Ocean", "The Indian Ocean",
           "Antarctica", "India", "Pakistan", "The Former Soviet Union", "The Former Yugoslavia",
           "Germany", "Berlin", "Hungary", "Turkey", "Budapest", "Europe", "Asia", "The Phillipines",
@@ -646,18 +646,30 @@ ga('send', 'pageview');
 
         }
 
+        function generateTwoCountries() {
+          var toReturn = places.sample() + " Is " + ["Incredibly", "So Far", "Somewhat", "Just A Little"].sample()
+            + " " + ["Ahead Of", "Behind"].sample() + " " + places.sample() + " When It Comes To " 
+            + pluralNoun.sample() + ".";
+          return toReturn;
+
+        }
+
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
             "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
             "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses",
             "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y", "top-10", "weird-trick", "did-not-know",
             "percent", "think-x-are-y", "for-one-day", "it-only-takes", "describe", "together", "this-person",
-            "word", "i-wish");
+            "word", "i-wish", "two-countries");
 
           decision = viralTemplates.sample();
-          // decision = "i-wish";
+          // decision = "two-countries";
 
 	  switch (decision) {
+
+            case "two-countries":
+              return generateTwoCountries();
+              break;
 
             case "i-wish":
               return generateIWish();
@@ -817,7 +829,15 @@ ga('send', 'pageview');
     </script>
 
 
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- iv-leaderboard -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7909388434833763"
+     data-ad-slot="7675655535"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 </html>
