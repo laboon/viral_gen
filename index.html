@@ -665,7 +665,6 @@ ga('send', 'pageview');
             + " In " + places.sample() + ". I Wish That Didn't "
             + ["Shock", "Scare", "Surprise", "Endanger", "Delight"].sample() + " Me.";
           return toReturn;
-
         }
 
         function generateTwoCountries() {
@@ -676,18 +675,84 @@ ga('send', 'pageview');
 
         }
 
+        function generateSinceWhen() {
+          var toReturn = "Since When Is Being " + adjective.sample() + " A "
+            + ["Crime", "Blessing", "Drawback", "Felony", "Misdemeanor"].sample()
+            + "? In " + places.sample() + ", Since "
+            + ["Yesterday", "Last Week", "The Dawn of History", "This Man Was Born", "This Woman Was Born"].sample()
+            + ".";
+          return toReturn; 
+        }
+
+        function generateFutureDest() {
+          var year = (Math.floor(Math.random() * 220) + 1850).toString();
+          var num = getRandomNum();
+          var toReturn = num + " " + adjective.sample() + " Images Of " + places.sample()
+            + " In " + year + "!";
+          return toReturn;
+
+        }
+
+        function generateNRules() {
+          var num = getRandomNum();
+          var numMost = getRandomMost(num);
+          var toReturn = "This " + person.sample() + " Wrote " + num + " Rules For "
+            + gerund.sample() + ". Number " + numMost + " " + blewMeAway.sample() + ".";
+          return toReturn;
+        }
+
+
+        function generateNotThatKind() {
+          pl = places.sample();
+          var toReturn = "Every " + timePeriod.sample() + " In " + places.sample() + ", "
+            + "There's A " + noun.sample() + " " + ["Party", "Festival", "Celebration"].sample()
+            + " (Not That Kind).  Now " 
+            + ["The Police Department", "The Neighborhood", "The Government", "The United Nations", pl].sample()
+            + " Wants To "
+            + ["Shut It Down", "Take It Everywhere", "Copy It"].sample() + ".";
+          return toReturn;
+        }
+
+        function generateIsItOK() {
+          var toReturn = "We Asked This " + person.sample() + " If It Was OK If This "
+            + person.sample() + " " + verbPast.sample() + " " + ["His", "Her"].sample() + " " + pluralNoun.sample()
+            + ". The " + ["Response", "Answer"].sample() + " " + mayShockYou.sample() + ".";
+          return toReturn;
+        }
+
         function generate() {
 	  var viralTemplates =  new Array("blew-me-away", "only-people", "n-reasons", "n-best", "may-shock",
             "twist", "hot-trend", "secrets", "stop-everything", "what-x-are-you", "only-x-kids", "pics",
             "omg", "better", "thoughts", "the-best-x-in-y", "ways", "x-in-y", "honest", "video", "perfect-responses",
             "good-bad-super", "if-x-like-y", "if-x-like-x", "x-was-a-y", "top-10", "weird-trick", "did-not-know",
             "percent", "think-x-are-y", "for-one-day", "it-only-takes", "describe", "together", "this-person",
-            "word", "i-wish", "two-countries");
+            "word", "i-wish", "two-countries", "since-when", "future-dest", "n-rules", "not-that-kind",
+            "is-it-ok");
 
           decision = viralTemplates.sample();
-          // decision = "two-countries";
+          decision = "is-it-ok";
 
 	  switch (decision) {
+
+            case "is-it-ok":
+              return generateIsItOK();
+              break;
+
+            case "not-that-kind":
+              return generateNotThatKind();
+              break;
+
+            case "n-rules":
+              return generateNRules();
+              break;
+
+            case "future-dest":
+              return generateFutureDest();
+              break;
+
+            case "since-when":
+              return generateSinceWhen();
+              break;
 
             case "two-countries":
               return generateTwoCountries();
