@@ -14,6 +14,11 @@ div.headline {
     text-align: center;
 }
 
+div.tweet {
+    text-align: center;
+    margin: 10px 0;
+}
+
 div.viralize {
     font-size: 150%;
     text-align: center;
@@ -45,9 +50,17 @@ ga('send', 'pageview');
     <div id="viral-text" class="headline">
 
     </div>
+
+    <div id="tweet-button-container" class="tweet">
+    </div>
+
     <div class="viralize">
       <a href="">Viralize me</a>
     </div>
+
+    <script type="text/javascript">
+    window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+    </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
@@ -330,7 +343,21 @@ ga('send', 'pageview');
         }
 
 	function showViralHeadline() {
-	  $("#viral-text").text(generate()).animate ({
+    var headline = generate();
+
+    $('#tweet-button-container').empty();
+    window.twttr.widgets.createShareButton(
+      'InfiniteViral',
+      document.getElementById('tweet-button-container'),
+      {
+        count: 'none',
+        size: 'large',
+        via: 'InfiniteViral',
+        text: headline
+      }
+    );
+
+	  $("#viral-text").text(headline).animate ({
             color: getRandomDarkColor()
           }, 500);
 	}
