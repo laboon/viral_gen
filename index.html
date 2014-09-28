@@ -163,7 +163,8 @@ ga('send', 'pageview');
           "Automatic", "Unyielding", "Invincible", "Rapid", "Nervous", "Calm", "Contemplative",
           "Cerebral", "Voracious", "Starving", "Full", "Killer", "Wicked", "Rational", "Real",
           "Actual", "Homemade", "Cigar-Chomping", "Aerodynamic", "Sinister", "Doubting",
-          "Robotic", "Monosyllabic", "Maniacal", "Intellectual", "Postmodern", "Prehistoric");
+          "Robotic", "Monosyllabic", "Maniacal", "Intellectual", "Postmodern", "Prehistoric",
+          "Internationally Acclaimed", "Penniless");
 
 	var goodSuperlative = new Array("Cutest", "Fluffiest", "Best", "Shiniest", "Most Awesome",
           "Fastest", "Nicest", "Most Awe-Inspiring", "Happiest", "Most Enlightened",
@@ -376,7 +377,7 @@ ga('send', 'pageview');
 
 	function generateBlewMeAway() {
 	  var toReturn = "This " + adjective.sample() + " "
-            + person.sample() + " " + verbPast.sample() + " " + ["His", "Her"] + " " + noun.sample()
+            + person.sample() + " " + verbPast.sample() + " " + ["His", "Her"].sample() + " " + noun.sample()
 	    + ".  What Happened Next " + blewMeAway.sample() + ".";
 	  return toReturn;
 	}
@@ -384,14 +385,14 @@ ga('send', 'pageview');
 	function generateMayShock() {
           var toReturn = capitalize(wh.sample()) + " This " + adjective.sample() + " " + person.sample()
             + " " + verbPast.sample() 
-            + " " + ["His", "Her"] + " " + noun.sample() 
+            + " " + ["His", "Her"].sample() + " " + noun.sample() 
             + " " + mayShockYou.sample() + ".";
           return toReturn;
         }
 
         function generateTwist() {
           var toReturn = "I Thought This " + person.sample() + " Was " + adjective.sample() 
-            + " Until I Realized " + ["His", "Her"] + " "
+            + " Until I Realized " + ["His", "Her"].sample() + " "
             + noun.sample() + " " + ["Was", "Is", "Could Be", "Might Be"].sample() + " " + adjective.sample() + "!";
           return toReturn;
 	}
@@ -493,7 +494,7 @@ ga('send', 'pageview');
           p = pluralNoun.sample();
           s = noun.sample();
           var toReturn = num + " " + adjective.sample() + " Ways That The " + goodSuperlative.sample() 
-            + " " + person.sample() + " is "+ gerund.sample() + " " + ["His", "Her"] + " "
+            + " " + person.sample() + " is "+ gerund.sample() + " " + ["His", "Her"].sample() + " "
             + [p, s].sample() + ".  Number " + numMost + " " + [b, m].sample() + ".";
           return toReturn;
         }
