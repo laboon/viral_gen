@@ -18,6 +18,11 @@ div.viralize {
     text-align: center;
 }
 
+div.ad {
+    display: table;
+    margin: 0 auto;
+}
+
 </style>
 
 <!-- Google Analytics -->
@@ -91,7 +96,8 @@ ga('send', 'pageview');
           "Doll", "Anvil", "Bottle Rocket", "Website", "Sidewalk", "Sculpture", "Statue", 
           "Battleship", "Wombat", "Opossum", "Labradoodle", "Billy Goat", "Gavel", "Won Ton Soup",
           "Rattlesnake", "Energy Drink", "Salad Bar", "Buffet", "Smorgasboard", "Laser Pointer",
-          "Supercomputer", "Blob", "Broiling Pan", "Spatula", "Fireplace", "Food Dish");
+          "Supercomputer", "Blob", "Broiling Pan", "Spatula", "Fireplace", "Food Dish", "Rhinoceros",
+          "General Tso's Chicken", "Dinner", "Sushi Roll", "Cave", "Rabbit", "Lamp", "Poodle");
 
         var pluralNoun = new Array("Dogs", "Cats", "Birds", "Antlers", "Antennae", "Ducks", "Goats",
           "Books", "Plants", "Ants", "Blankets", "Cookies", "Cakes", "Whales", "Feathers", "Collages",
@@ -351,7 +357,7 @@ ga('send', 'pageview');
           var num = getRandomNum();
           var numMost = getRandomMost(num);
 	  var toReturn = num + " Reasons That This " + person.sample() + " " + verbPast.sample() + " " +
-            ["His", "Her", "Their", "Somebody's"].sample() + " " + noun.sample() + "."
+            ["His", "Her", "Somebody's"].sample() + " " + noun.sample() + "."
             + " Number " + numMost + " " + blewMeAway.sample() + ".";
           return toReturn;
 	}
@@ -370,7 +376,7 @@ ga('send', 'pageview');
 
 	function generateBlewMeAway() {
 	  var toReturn = "This " + adjective.sample() + " "
-            + person.sample() + " " + verbPast.sample() + " Their " + noun.sample()
+            + person.sample() + " " + verbPast.sample() + " " + ["His", "Her"] + " " + noun.sample()
 	    + ".  What Happened Next " + blewMeAway.sample() + ".";
 	  return toReturn;
 	}
@@ -378,14 +384,14 @@ ga('send', 'pageview');
 	function generateMayShock() {
           var toReturn = capitalize(wh.sample()) + " This " + adjective.sample() + " " + person.sample()
             + " " + verbPast.sample() 
-            + " Their " + noun.sample() 
+            + " " + ["His", "Her"] + " " + noun.sample() 
             + " " + mayShockYou.sample() + ".";
           return toReturn;
         }
 
         function generateTwist() {
           var toReturn = "I Thought This " + person.sample() + " Was " + adjective.sample() 
-            + " Until I Realized Their "
+            + " Until I Realized " + ["His", "Her"] + " "
             + noun.sample() + " " + ["Was", "Is", "Could Be", "Might Be"].sample() + " " + adjective.sample() + "!";
           return toReturn;
 	}
@@ -442,7 +448,7 @@ ga('send', 'pageview');
           var toReturn = "OMG.  You " 
             + ["Need To", "Really Need To", "Should", "Have To", "MUST", "Can"].sample()
             + " " + ["See", "Check Out", "Look At", "Hang Out With", "Figure Out"].sample()
-            + " " + ["This", "The", "My", "His", "Her", "Their"].sample() + " " 
+            + " " + ["This", "The", "My", "His", "Her"].sample() + " " 
             + adjective.sample() + " " + [p, n].sample() + "!";
           return toReturn;
          }
@@ -487,7 +493,7 @@ ga('send', 'pageview');
           p = pluralNoun.sample();
           s = noun.sample();
           var toReturn = num + " " + adjective.sample() + " Ways That The " + goodSuperlative.sample() 
-            + " " + person.sample() + " is "+ gerund.sample() + " Their "
+            + " " + person.sample() + " is "+ gerund.sample() + " " + ["His", "Her"] + " "
             + [p, s].sample() + ".  Number " + numMost + " " + [b, m].sample() + ".";
           return toReturn;
         }
@@ -842,17 +848,18 @@ ga('send', 'pageview');
 
 
     </script>
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- iv-leaderboard -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-7909388434833763"
-     data-ad-slot="7675655535"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<p>
+<div class="ad">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- iv-leaderboard -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-7909388434833763"
+       data-ad-slot="7675655535"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
 </body>
 </html>
