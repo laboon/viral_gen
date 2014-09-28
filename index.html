@@ -366,6 +366,14 @@ ga('send', 'pageview');
           return str.charAt(0).toUpperCase() + str.slice(1);
         }
 
+        function aOrAn(str) {
+          if(str.match("^[aeiouAEIOU]")) {
+            return "An " + str;
+          } else {
+            return "A " + str;
+          }
+        }
+
         function getRandomNum() {
           return (Math.floor(Math.random() * 15) + 5).toString();
         }
@@ -429,7 +437,7 @@ ga('send', 'pageview');
           var toReturn = "The Hot New Trend For " + ["This", "Next"].sample() + " " 
             + timePeriod.sample() + "? " + gerund.sample()
             + " " + ["Your", "The"].sample() + " " + noun.sample() 
-            + " Just Like A " + person.sample() + "!";
+            + " Just Like " + aOrAn(person.sample()) + "!";
           return toReturn;
         }
 
@@ -660,7 +668,7 @@ ga('send', 'pageview');
 
         function generateTogether() {
           var num = getRandomNum();
-          var toReturn = "A " + person.sample() + " And A " + person.sample() + " "
+          var toReturn = aOrAn(person.sample()) + " And " + aOrAn(person.sample()) + " "
             + ["Were Together", "Were Partners", "Were Married", "Dated"].sample() 
             + " For " + num + " Years.  Then " + ["He", "She"].sample() + " "
             + ["Found Out About", "Discovered", "Forgot", "Uncovered"].sample()
@@ -704,8 +712,8 @@ ga('send', 'pageview');
         }
 
         function generateSinceWhen() {
-          var toReturn = "Since When Is Being " + adjective.sample() + " A "
-            + ["Crime", "Blessing", "Drawback", "Felony", "Misdemeanor"].sample()
+          var toReturn = "Since When Is Being " + adjective.sample() + " "
+            + aOrAn(["Crime", "Blessing", "Drawback", "Felony", "Misdemeanor"].sample())
             + "? In " + places.sample() + ", Since "
             + ["Yesterday", "Last Week", "The Dawn of History", "This Man Was Born", "This Woman Was Born"].sample()
             + ".";
@@ -733,8 +741,8 @@ ga('send', 'pageview');
         function generateNotThatKind() {
           pl = places.sample();
           var toReturn = "Every " + timePeriod.sample() + " In " + places.sample() + ", "
-            + "There's A " + noun.sample() + " " + ["Party", "Festival", "Celebration"].sample()
-            + " (Not That Kind).  Now " 
+            + "There's " + aOrAn(noun.sample()) + " " + ["Party", "Festival", "Celebration"].sample()
+            + " (Not That Kind).  Now "
             + ["The Police Department", "The Neighborhood", "The Government", "The United Nations", pl].sample()
             + " Wants To "
             + ["Shut It Down", "Take It Everywhere", "Copy It"].sample() + ".";
